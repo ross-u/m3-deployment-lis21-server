@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
+// UPDATE
 
 const { isAuthenticated, isAdmin } = require("./../middleware/jwt.middleware");
 
@@ -101,7 +102,7 @@ router.post("/auth/login", async (req, res, next) => {
         email: foundUser.email,
         name: foundUser.name,
         role: foundUser.role, // 'admin' or 'user'
-        image: foundUser.image, 
+        image: foundUser.image,
       };
 
       // Create a JWT with the payload
